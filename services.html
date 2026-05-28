@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — Dino Dental Kampala</title>
+  <meta name="description" content="Explore all dental services at Dino Dental Kampala: general checkups, teeth whitening, root canal, extractions, bridges, and pediatric dentistry." />
+  <link rel="canonical" href="https://xtremecloud7-prog.github.io/dino-dentist/services.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .process-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; counter-reset:step; }
+    .process-step { text-align:center; padding:32px 20px; background:white; border-radius:var(--radius); border:1px solid var(--border); position:relative; }
+    .process-step::before { counter-increment:step; content:counter(step,"0"); font-family:var(--font-head); font-size:3rem; font-weight:800; color:rgba(26,115,232,0.08); position:absolute; top:16px; right:20px; line-height:1; }
+    .process-icon { width:52px;height:52px;background:rgba(26,115,232,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:1.2rem;margin:0 auto 14px; }
+    .process-step h4 { font-family:var(--font-head);margin-bottom:8px; }
+    .process-step p { font-size:0.875rem;color:var(--text-light); }
+    .service-detail { display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:64px; }
+    .service-detail:nth-child(even) { direction:rtl; }
+    .service-detail:nth-child(even) > * { direction:ltr; }
+    .service-detail-img { border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md); }
+    .service-detail-img img { width:100%;height:340px;object-fit:cover; }
+    @media(max-width:900px){.process-steps{grid-template-columns:repeat(2,1fr)}.service-detail{grid-template-columns:1fr}.service-detail:nth-child(even){direction:ltr}}
+    @media(max-width:600px){.process-steps{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><i class="fas fa-tooth"></i></div><div>DINO DENTAL<span>Kampala</span></div></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html" class="active">Services</a>
+      <a href="podcast.html">Podcast</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="nav-cta">Book Appointment</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="podcast.html">Podcast</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a>
+  <a href="contact.html">📅 Book Appointment</a>
+</div>
+
+<section class="page-hero">
+  <div class="container fade-in-up">
+    <div class="section-label" style="color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2)">What We Do</div>
+    <h1>Our Dental Services</h1>
+    <p>Comprehensive care for your entire family — from routine checkups to advanced dental procedures.</p>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">All Services</div>
+      <h2 class="section-title">Everything Your Smile Needs</h2>
+      <p class="section-desc">We offer a full range of dental services designed to keep you healthy and confident.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal delay-1">
+        <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+        <h3>General Checkups & Cleaning</h3>
+        <p>Regular dental examinations and professional cleanings are the foundation of good oral health. We check for cavities, gum disease, and early signs of other conditions — catching problems before they become costly.</p>
+        <a href="contact.html" class="btn btn-outline" style="margin-top:20px;font-size:0.82rem;padding:9px 20px">Book Now →</a>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon"><i class="fas fa-magic"></i></div>
+        <h3>Teeth Whitening</h3>
+        <p>Restore the natural brightness of your smile with our professional whitening treatments. Safely and effectively remove stains from coffee, tea, and food — results that over-the-counter products simply can't match.</p>
+        <a href="contact.html" class="btn btn-outline" style="margin-top:20px;font-size:0.82rem;padding:9px 20px">Book Now →</a>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon"><i class="fas fa-tooth"></i></div>
+        <h3>Tooth Extractions</h3>
+        <p>When a tooth is too damaged or impacted to save, our gentle extraction procedures ensure minimal discomfort and fast recovery. We always explore alternatives before recommending removal.</p>
+        <a href="contact.html" class="btn btn-outline" style="margin-top:20px;font-size:0.82rem;padding:9px 20px">Book Now →</a>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-icon"><i class="fas fa-syringe"></i></div>
+        <h3>Root Canal Therapy</h3>
+        <p>Save your natural tooth from extraction with our painless root canal treatments. We remove infected pulp, clean the canal, and seal the tooth — giving it a new lease on life with full function restored.</p>
+        <a href="contact.html" class="btn btn-outline" style="margin-top:20px;font-size:0.82rem;padding:9px 20px">Book Now →</a>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon"><i class="fas fa-teeth"></i></div>
+        <h3>Dental Bridges</h3>
+        <p>Replace one or more missing teeth with a natural-looking dental bridge. Fixed in place and crafted to match your existing teeth, bridges restore your bite, speech, and confidence seamlessly.</p>
+        <a href="contact.html" class="btn btn-outline" style="margin-top:20px;font-size:0.82rem;padding:9px 20px">Book Now →</a>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon"><i class="fas fa-child"></i></div>
+        <h3>Pediatric Dentistry</h3>
+        <p>We love treating little smiles! Our child-friendly approach ensures a positive first dental experience for children. We provide preventive care, sealants, and gentle treatments in a calm, welcoming atmosphere.</p>
+        <a href="contact.html" class="btn btn-outline" style="margin-top:20px;font-size:0.82rem;padding:9px 20px">Book Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">How Your Visit Works</h2>
+      <p class="section-desc">We've made every step easy, transparent, and stress-free.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal delay-1">
+        <div class="process-icon"><i class="fas fa-calendar-check"></i></div>
+        <h4>Book</h4>
+        <p>Call, WhatsApp, or fill out our online form. We'll confirm your appointment within 2 hours.</p>
+      </div>
+      <div class="process-step reveal delay-2">
+        <div class="process-icon"><i class="fas fa-clipboard-check"></i></div>
+        <h4>Assess</h4>
+        <p>Your dentist conducts a thorough examination and discusses your concerns and treatment options.</p>
+      </div>
+      <div class="process-step reveal delay-3">
+        <div class="process-icon"><i class="fas fa-tooth"></i></div>
+        <h4>Treat</h4>
+        <p>We carry out your chosen treatment with care, skill, and the latest dental techniques.</p>
+      </div>
+      <div class="process-step reveal delay-4">
+        <div class="process-icon"><i class="fas fa-smile-beam"></i></div>
+        <h4>Follow Up</h4>
+        <p>We check in on your recovery and schedule any follow-up visits to ensure lasting results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLINICAL PHOTO -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center" class="reveal">
+      <div>
+        <div class="section-label">Advanced Care</div>
+        <h2 class="section-title" style="text-align:left;margin-bottom:18px">Precision Restorative Dentistry</h2>
+        <p style="color:var(--text-light);line-height:1.8;margin-bottom:16px">Our team handles complex restorative cases with precision and attention to detail. The clinical image shown here illustrates the kind of careful, close-up work our dentists perform — using amalgam and composite fillings to restore damaged molars while preserving as much natural tooth structure as possible.</p>
+        <p style="color:var(--text-light);line-height:1.8;margin-bottom:24px">Whether you need a small filling or a full reconstruction, you're in expert hands at Dino Dental Kampala.</p>
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar"></i> Book a Consultation</a>
+      </div>
+      <div style="border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)">
+        <img src="FB_IMG_17798977054116038.jpg" alt="Precision dental treatment at Dino Dental" style="width:100%;height:380px;object-fit:cover" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACEBOOK OFFERS -->
+<section class="section section-alt">
+  <div class="container reveal">
+    <div class="fb-banner">
+      <div style="font-size:2.5rem;margin-bottom:12px">🎁</div>
+      <h3>Facebook Exclusive Offers</h3>
+      <p>Follow us on Facebook for special discounts and dental tips! Mention <strong>"Facebook Follower"</strong> when booking for a special discount on your treatment.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <a href="https://m.facebook.com/dentaldino/" target="_blank" class="btn btn-white"><i class="fab fa-facebook"></i> Follow Us on Facebook</a>
+        <a href="contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:white"><i class="fas fa-tag"></i> Claim Your Discount</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="section" style="background:linear-gradient(135deg,#0d3d7a,#1a73e8);color:white;text-align:center">
+  <div class="container reveal">
+    <h2 style="font-family:var(--font-head);font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:16px;color:white">Ready to Book Your Treatment?</h2>
+    <p style="opacity:0.88;font-size:1.05rem;margin-bottom:32px">Our friendly team is here to help. Call us, WhatsApp us, or book online.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-white"><i class="fas fa-calendar-check"></i> Book My Appointment</a>
+      <a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      <a href="tel:+256701887527" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:white"><i class="fas fa-phone"></i> Call Now</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:16px"><div class="logo-icon"><i class="fas fa-tooth"></i></div><div>DINO DENTAL<span>Kampala</span></div></a><p>Professional dental care at Delta House, Katwe, Kampala.</p><div class="social-icons"><a href="https://m.facebook.com/dentaldino/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a><a href="https://wa.me/256701887527" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="services.html">General Checkups</a></li><li><a href="services.html">Teeth Whitening</a></li><li><a href="services.html">Root Canal</a></li><li><a href="services.html">Extractions</a></li><li><a href="services.html">Pediatric Dentistry</a></li></ul></div>
+      <div><h4>Contact Us</h4><ul class="footer-contact"><li><i class="fas fa-map-marker-alt"></i><span>Delta House, Katwe, opposite Total BMK, Kampala</span></li><li><i class="fas fa-phone"></i><span>+256 701 887527</span></li><li><i class="fas fa-clock"></i><span>Mon–Fri: 8AM–6PM | Sat: 9AM–2PM</span></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p>&copy; 2025 Dino Dental Kampala. All rights reserved.</p></div></div>
+</footer>
+
+<a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+<script src="main.js"></script>
+</body>
+</html>

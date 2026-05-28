@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Dino Dental Kampala</title>
+  <meta name="description" content="Learn about Dino Dental Kampala's story, mission, and the team of dental professionals serving Katwe and all of Kampala." />
+  <link rel="canonical" href="https://xtremecloud7-prog.github.io/dino-dentist/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-story { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .about-story img { border-radius:var(--radius); box-shadow:var(--shadow-lg); width:100%; height:420px; object-fit:cover; }
+    .about-values { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .value-card { text-align:center; padding:36px 24px; background:white; border-radius:var(--radius); border:1px solid var(--border); transition:all var(--transition); }
+    .value-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--blue); }
+    .value-icon { width:64px;height:64px;background:rgba(26,115,232,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:1.5rem;margin:0 auto 16px;transition:all var(--transition); }
+    .value-card:hover .value-icon { background:var(--blue);color:white; }
+    .value-card h3 { font-family:var(--font-head);font-size:1.05rem;margin-bottom:10px; }
+    .value-card p { font-size:0.875rem;color:var(--text-light); }
+
+    .award-banner { background:linear-gradient(135deg,#1a1a2e,#1a73e8); color:white; border-radius:var(--radius); padding:48px; display:flex; align-items:center; gap:32px; }
+    .award-icon { font-size:4rem; flex-shrink:0; }
+    .award-banner h3 { font-family:var(--font-head);font-size:1.8rem;margin-bottom:8px; }
+    .award-banner p { opacity:0.85; }
+
+    .milestones { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+    .milestone { text-align:center; padding:28px; background:white; border-radius:var(--radius); border:1px solid var(--border); }
+    .milestone .num { font-family:var(--font-head);font-size:2.4rem;font-weight:700;color:var(--blue);line-height:1;margin-bottom:6px; }
+    .milestone p { font-size:0.85rem;color:var(--text-light);font-weight:500; }
+
+    @media(max-width:900px){.about-story{grid-template-columns:1fr}.about-values{grid-template-columns:1fr 1fr}.award-banner{flex-direction:column;text-align:center}.milestones{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.about-values{grid-template-columns:1fr}.milestones{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><i class="fas fa-tooth"></i></div>
+      <div>DINO DENTAL<span>Kampala</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="videos.html">Videos</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="nav-cta">Book Appointment</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="podcast.html">Podcast</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a>
+  <a href="contact.html">📅 Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container fade-in-up">
+    <div class="section-label" style="color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2)">Our Story</div>
+    <h1>About Dino Dental Kampala</h1>
+    <p>Bringing professional, compassionate dental care to the heart of Katwe since our founding.</p>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="section">
+  <div class="container">
+    <div class="about-story">
+      <div class="reveal">
+        <img src="FB_IMG_17798978575421828.jpg" alt="Dino Dental Kampala clinic team" loading="lazy" />
+      </div>
+      <div class="reveal delay-2">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title" style="text-align:left;margin-bottom:20px">A Clinic Built on Passion for Your Smile</h2>
+        <p style="color:var(--text-light);margin-bottom:16px;line-height:1.8">Dino Dental Kampala was founded with a simple but powerful mission: to make quality dental care accessible, affordable, and genuinely enjoyable for every person in Kampala and beyond.</p>
+        <p style="color:var(--text-light);margin-bottom:16px;line-height:1.8">Located at Delta House in Katwe — right opposite Total BMK — our clinic has grown into a trusted dental home for thousands of patients. From young children visiting for the first time to adults seeking advanced restorative care, we treat every patient like family.</p>
+        <p style="color:var(--text-light);margin-bottom:28px;line-height:1.8">We believe a healthy smile transforms lives. That's why we invest in our team, our environment, and our ongoing education — ensuring you receive care that meets international standards right here in Kampala.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="services.html" class="btn btn-primary"><i class="fas fa-tooth"></i> Our Services</a>
+          <a href="contact.html" class="btn btn-outline"><i class="fas fa-calendar"></i> Book a Visit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARD -->
+<section class="section section-alt">
+  <div class="container reveal">
+    <div class="award-banner">
+      <div class="award-icon">🏆</div>
+      <div>
+        <h3>2024 Voice of the Customer Award — Dental Care</h3>
+        <p>Dino Dental Kampala was nominated for the prestigious Voice of the Customer Awards 2024 in the Dental Care category — a testament to the trust our patients place in us every single day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">By the Numbers</div>
+      <h2 class="section-title">Our Journey in Numbers</h2>
+    </div>
+    <div class="milestones">
+      <div class="milestone reveal delay-1">
+        <div class="num"><span class="counter" data-target="5000" data-suffix="+">0</span></div>
+        <p>Patients Served</p>
+      </div>
+      <div class="milestone reveal delay-2">
+        <div class="num"><span class="counter" data-target="416" data-suffix="+">0</span></div>
+        <p>YouTube Subscribers</p>
+      </div>
+      <div class="milestone reveal delay-3">
+        <div class="num"><span class="counter" data-target="99" data-suffix="+">0</span></div>
+        <p>Educational Videos</p>
+      </div>
+      <div class="milestone reveal delay-4">
+        <div class="num"><span class="counter" data-target="6">0</span></div>
+        <p>Dental Services</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VALUES -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Our Values</div>
+      <h2 class="section-title">What Drives Us Every Day</h2>
+      <p class="section-desc">Our values aren't just words — they're the way we show up for every single patient.</p>
+    </div>
+    <div class="about-values">
+      <div class="value-card reveal delay-1">
+        <div class="value-icon"><i class="fas fa-heart"></i></div>
+        <h3>Compassionate Care</h3>
+        <p>We treat every patient with genuine empathy, patience, and respect — making dental visits a positive experience.</p>
+      </div>
+      <div class="value-card reveal delay-2">
+        <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Clinical Excellence</h3>
+        <p>We uphold the highest standards of dental practice, using modern techniques and quality materials.</p>
+      </div>
+      <div class="value-card reveal delay-3">
+        <div class="value-icon"><i class="fas fa-users"></i></div>
+        <h3>Community First</h3>
+        <p>We're proud to serve Katwe and Kampala — educating communities about dental health through our YouTube channel and outreach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">The Team</div>
+      <h2 class="section-title">Meet Our Dental Family</h2>
+      <p class="section-desc">The passionate professionals behind every healthy smile at Dino Dental.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal delay-1">
+        <div class="team-avatar">
+          <img src="FB_IMG_17798978674605969.jpg" alt="Dino Dental Dentist" loading="lazy" />
+        </div>
+        <h3>Dr. Robert Kiron</h3>
+        <p style="color:var(--blue);font-size:0.8rem;font-weight:600;margin-bottom:6px">Lead Dentist & Founder</p>
+        <p style="font-size:0.85rem;color:var(--text-light)">Passionate educator, YouTuber, and dental professional dedicated to transforming smiles across Kampala.</p>
+      </div>
+      <div class="team-card reveal delay-2">
+        <div class="team-avatar">
+          <img src="FB_IMG_17798978575421828.jpg" alt="Dental Assistant" loading="lazy" />
+        </div>
+        <h3>The Care Team</h3>
+        <p style="color:var(--blue);font-size:0.8rem;font-weight:600;margin-bottom:6px">Dental Assistants & Support</p>
+        <p style="font-size:0.85rem;color:var(--text-light)">Our friendly support staff ensure every visit is smooth, comfortable, and stress-free from reception to treatment.</p>
+      </div>
+      <div class="team-card reveal delay-3">
+        <div class="team-avatar">
+          <img src="FB_IMG_17798976818492896.jpg" alt="Patient family" loading="lazy" style="object-position:top" />
+        </div>
+        <h3>Our Patients</h3>
+        <p style="color:var(--blue);font-size:0.8rem;font-weight:600;margin-bottom:6px">The Heart of Our Clinic</p>
+        <p style="font-size:0.85rem;color:var(--text-light)">From children to grandparents, every patient is part of the Dino Dental family. Your trust means everything to us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">Visit Our Clinic</h2>
+      <p class="section-desc">Conveniently located at Delta House, Katwe — easy to find, easy to reach.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start" class="reveal">
+      <div>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.757!2d32.5724!3d0.3015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbf0e25f24b7%3A0x0!2zMCoxOMKwMTgnMDUuNiJOIDMywyo0Myc0MS42IkU!5e0!3m2!1sen!2sug!4v1" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dino Dental Kampala Location"></iframe>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-head);font-size:1.4rem;margin-bottom:24px">Getting Here</h3>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><h4>Address</h4><p>Delta House, Katwe<br>Opposite Total BMK, Kampala, Uganda</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+          <div><h4>Opening Hours</h4><p>Monday – Friday: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 2:00 PM<br>Sunday: Closed</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+          <div><h4>Phone</h4><p><a href="tel:+256701887527" style="color:var(--blue)">+256 701 887527</a><br><a href="tel:+256776887527" style="color:var(--blue)">+256 776 887527</a></p></div>
+        </div>
+        <a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I%20need%20directions." target="_blank" class="btn btn-whatsapp" style="margin-top:8px"><i class="fab fa-whatsapp"></i> Ask for Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:16px"><div class="logo-icon"><i class="fas fa-tooth"></i></div><div>DINO DENTAL<span>Kampala</span></div></a>
+        <p>Professional, friendly, and affordable dental care in the heart of Katwe, Kampala.</p>
+        <div class="social-icons">
+          <a href="https://m.facebook.com/dentaldino/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/256701887527" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="services.html">General Checkups</a></li><li><a href="services.html">Teeth Whitening</a></li><li><a href="services.html">Root Canal</a></li><li><a href="services.html">Extractions</a></li><li><a href="services.html">Pediatric Dentistry</a></li></ul></div>
+      <div><h4>Contact Us</h4><ul class="footer-contact"><li><i class="fas fa-map-marker-alt"></i><span>Delta House, Katwe, opposite Total BMK, Kampala</span></li><li><i class="fas fa-phone"></i><span>+256 701 887527</span></li><li><i class="fas fa-clock"></i><span>Mon–Fri: 8AM–6PM | Sat: 9AM–2PM</span></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p>&copy; 2025 Dino Dental Kampala. All rights reserved.</p></div></div>
+</footer>
+
+<a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+<script src="main.js"></script>
+</body>
+</html>

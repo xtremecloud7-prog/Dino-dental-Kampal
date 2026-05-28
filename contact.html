@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment — Dino Dental Kampala</title>
+  <meta name="description" content="Book your dental appointment at Dino Dental Kampala. Call +256701887527, WhatsApp us, or fill in our online form. Delta House, Katwe, Kampala." />
+  <link rel="canonical" href="https://xtremecloud7-prog.github.io/dino-dentist/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-form-card {
+      background: white; border-radius: var(--radius);
+      padding: 40px; border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-form-card h2 {
+      font-family: var(--font-head); font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .contact-form-card > p {
+      color: var(--text-light); font-size: 0.9rem;
+      margin-bottom: 28px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    #form-success {
+      display: none; background: #dcfce7; border: 1.5px solid #86efac;
+      border-radius: var(--radius-sm); padding: 16px 20px;
+      color: #166534; font-size: 0.9rem; margin-bottom: 16px;
+    }
+    #form-success i { margin-right: 8px; }
+    .hours-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    .hours-table tr td { padding: 9px 0; font-size: 0.875rem; border-bottom: 1px solid var(--border); }
+    .hours-table tr:last-child td { border-bottom: none; }
+    .hours-table td:first-child { color: var(--text); font-weight: 500; }
+    .hours-table td:last-child { color: var(--text-light); text-align: right; }
+    .hours-open { color: #16a34a !important; font-weight: 600 !important; }
+    .hours-closed { color: #dc2626 !important; }
+    .quick-contact-btns { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .quick-contact-btn {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 18px; border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border); color: var(--text);
+      font-weight: 500; font-size: 0.9rem; transition: all var(--transition);
+      background: white;
+    }
+    .quick-contact-btn:hover { border-color: var(--blue); color: var(--blue); background: rgba(26,115,232,0.04); transform: translateX(4px); }
+    .quick-contact-btn i { font-size: 1.1rem; width: 20px; text-align: center; }
+    .quick-contact-btn.whatsapp:hover { border-color: var(--whatsapp); color: var(--whatsapp); background: rgba(37,211,102,0.04); }
+    .quick-contact-btn.facebook:hover { border-color: #1877F2; color: #1877F2; background: rgba(24,119,242,0.04); }
+    .quick-contact-btn.youtube:hover { border-color: #FF0000; color: #FF0000; background: rgba(255,0,0,0.04); }
+    @media(max-width:600px){ .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><i class="fas fa-tooth"></i></div><div>DINO DENTAL<span>Kampala</span></div></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+      <a href="podcast.html">Podcast</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="nav-cta active">Book Appointment</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="podcast.html">Podcast</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a>
+  <a href="contact.html">📅 Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container fade-in-up">
+    <div class="section-label" style="color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2)">Get in Touch</div>
+    <h1>Book Your Appointment</h1>
+    <p>Fill in the form below, call us, or send a WhatsApp message. We'll confirm within 2 hours.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- BOOKING FORM -->
+      <div class="contact-form-card reveal">
+        <h2>Request an Appointment</h2>
+        <p>Complete the form and our team will reach out to confirm your booking.</p>
+
+        <div id="form-success">
+          <i class="fas fa-check-circle"></i>
+          <strong>Thank you!</strong> We'll contact you within 2 hours to confirm your appointment.
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Your last name" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+256 700 000000" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Required *</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service...</option>
+              <option value="checkup">General Checkup & Cleaning</option>
+              <option value="whitening">Teeth Whitening</option>
+              <option value="extraction">Tooth Extraction</option>
+              <option value="rootcanal">Root Canal Therapy</option>
+              <option value="bridge">Dental Bridge</option>
+              <option value="pediatric">Pediatric Dentistry (Children)</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="preferredDate">Preferred Date</label>
+              <input type="date" id="preferredDate" name="preferredDate" />
+            </div>
+            <div class="form-group">
+              <label for="preferredTime">Preferred Time</label>
+              <select id="preferredTime" name="preferredTime">
+                <option value="" disabled selected>Select time...</option>
+                <option value="morning">Morning (8AM – 12PM)</option>
+                <option value="afternoon">Afternoon (12PM – 4PM)</option>
+                <option value="evening">Late Afternoon (4PM – 6PM)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="referral">How did you hear about us?</label>
+            <select id="referral" name="referral">
+              <option value="" disabled selected>Please select...</option>
+              <option value="google">Google Search</option>
+              <option value="facebook">Facebook</option>
+              <option value="youtube">YouTube</option>
+              <option value="friend">Friend / Family Referral</option>
+              <option value="walked">Walked Past the Clinic</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Additional Notes</label>
+            <textarea id="message" name="message" placeholder="Tell us about your dental concerns or any special requirements..."></textarea>
+          </div>
+
+          <div style="background:rgba(26,115,232,0.06);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:20px;font-size:0.82rem;color:var(--text-light)">
+            <i class="fas fa-info-circle" style="color:var(--blue)"></i>
+            &nbsp;If you came from <strong>Facebook</strong>, mention <em>"Facebook Follower"</em> in your notes for a special discount!
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:15px">
+            <i class="fas fa-calendar-check"></i> Book My Appointment
+          </button>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO PANEL -->
+      <div class="reveal delay-2">
+        <h2 style="font-family:var(--font-head);font-size:1.5rem;margin-bottom:24px">Contact Information</h2>
+
+        <div class="quick-contact-btns">
+          <a href="tel:+256701887527" class="quick-contact-btn">
+            <i class="fas fa-phone" style="color:var(--blue)"></i>
+            <div><strong>+256 701 887527</strong><br><span style="font-size:0.78rem;color:var(--text-light)">Call us directly</span></div>
+          </a>
+          <a href="tel:+256776887527" class="quick-contact-btn">
+            <i class="fas fa-phone" style="color:var(--blue)"></i>
+            <div><strong>+256 776 887527</strong><br><span style="font-size:0.78rem;color:var(--text-light)">Alternative line</span></div>
+          </a>
+          <a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="quick-contact-btn whatsapp">
+            <i class="fab fa-whatsapp" style="color:var(--whatsapp)"></i>
+            <div><strong>WhatsApp Us</strong><br><span style="font-size:0.78rem;color:var(--text-light)">Quick chat booking</span></div>
+          </a>
+          <a href="https://m.facebook.com/dentaldino/" target="_blank" class="quick-contact-btn facebook">
+            <i class="fab fa-facebook" style="color:#1877F2"></i>
+            <div><strong>Facebook</strong><br><span style="font-size:0.78rem;color:var(--text-light)">Message us on Facebook</span></div>
+          </a>
+          <a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="quick-contact-btn youtube">
+            <i class="fab fa-youtube" style="color:#FF0000"></i>
+            <div><strong>YouTube Channel</strong><br><span style="font-size:0.78rem;color:var(--text-light)">Watch our dental videos</span></div>
+          </a>
+        </div>
+
+        <!-- Address -->
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <h4>Our Location</h4>
+            <p>Delta House, Katwe<br>Opposite Total BMK, Kampala, Uganda</p>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div style="background:var(--bg-light);border-radius:var(--radius-sm);padding:20px;margin-bottom:24px">
+          <h4 style="font-weight:600;font-size:0.9rem;margin-bottom:2px"><i class="fas fa-clock" style="color:var(--blue);margin-right:8px"></i>Opening Hours</h4>
+          <table class="hours-table">
+            <tr><td>Monday</td><td class="hours-open">8:00 AM – 6:00 PM</td></tr>
+            <tr><td>Tuesday</td><td class="hours-open">8:00 AM – 6:00 PM</td></tr>
+            <tr><td>Wednesday</td><td class="hours-open">8:00 AM – 6:00 PM</td></tr>
+            <tr><td>Thursday</td><td class="hours-open">8:00 AM – 6:00 PM</td></tr>
+            <tr><td>Friday</td><td class="hours-open">8:00 AM – 6:00 PM</td></tr>
+            <tr><td>Saturday</td><td class="hours-open">9:00 AM – 2:00 PM</td></tr>
+            <tr><td>Sunday</td><td class="hours-closed">Closed</td></tr>
+          </table>
+        </div>
+
+        <!-- Map -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.757!2d32.5724!3d0.3015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbf0e25f24b7%3A0x0!2zMCoxOMKwMTgnMDUuNiJOIDMywyo0Myc0MS42IkU!5e0!3m2!1sen!2sug!4v1"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Dino Dental Kampala — Delta House, Katwe">
+          </iframe>
+        </div>
+
+        <a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I%20need%20directions%20to%20your%20clinic." target="_blank" class="btn btn-whatsapp" style="width:100%;justify-content:center;margin-top:14px">
+          <i class="fab fa-whatsapp"></i> Get Directions via WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FACEBOOK OFFER REMINDER -->
+<section class="section section-alt">
+  <div class="container reveal">
+    <div class="fb-banner">
+      <div style="font-size:2.2rem;margin-bottom:12px">🎁</div>
+      <h3>Facebook Follower Discount</h3>
+      <p>Follow <strong>Dino Dental Kampala</strong> on Facebook and mention <em>"Facebook Follower"</em> when booking — and receive a special discount on your treatment!</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <a href="https://m.facebook.com/dentaldino/" target="_blank" class="btn btn-white"><i class="fab fa-facebook"></i> Follow on Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:16px"><div class="logo-icon"><i class="fas fa-tooth"></i></div><div>DINO DENTAL<span>Kampala</span></div></a>
+        <p>Professional, friendly, and affordable dental care in the heart of Katwe, Kampala.</p>
+        <div class="social-icons">
+          <a href="https://m.facebook.com/dentaldino/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/256701887527" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="services.html">General Checkups</a></li><li><a href="services.html">Teeth Whitening</a></li><li><a href="services.html">Root Canal</a></li><li><a href="services.html">Extractions</a></li><li><a href="services.html">Pediatric Dentistry</a></li></ul></div>
+      <div><h4>Contact Us</h4><ul class="footer-contact"><li><i class="fas fa-map-marker-alt"></i><span>Delta House, Katwe, opposite Total BMK, Kampala</span></li><li><i class="fas fa-phone"></i><span>+256 701 887527<br>+256 776 887527</span></li><li><i class="fas fa-clock"></i><span>Mon–Fri: 8AM–6PM<br>Sat: 9AM–2PM | Sun: Closed</span></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p>&copy; 2025 Dino Dental Kampala. All rights reserved. | Delta House, Katwe, Kampala</p></div></div>
+</footer>
+
+<a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+<script src="main.js"></script>
+<script>
+  // Set minimum date to today
+  const dateInput = document.getElementById('preferredDate');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+  }
+</script>
+</body>
+</html>

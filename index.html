@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dino Dental Kampala — Your Smile, Our Priority</title>
+  <meta name="description" content="Dino Dental Kampala — professional, friendly, and affordable dental care at Delta House, Katwe, Kampala. Book your appointment today." />
+  <meta name="keywords" content="dental clinic Kampala, dentist Katwe, teeth whitening Kampala, Dino Dental" />
+  <meta property="og:title" content="Dino Dental Kampala — Your Smile, Our Priority" />
+  <meta property="og:description" content="Professional dental care at Delta House, Katwe, Kampala. Call +256701887527" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://xtremecloud7-prog.github.io/dino-dentist/" />
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== HOME-SPECIFIC STYLES ===== */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; padding-top: var(--nav-height);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #0d3d7a 0%, #1a73e8 60%, #2196f3 100%);
+    }
+    .hero-bg-img {
+      position: absolute; inset: 0;
+      background: url('FB_IMG_17798978674605969.jpg') center/cover no-repeat;
+      opacity: 0.22;
+    }
+    .hero-pattern {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 50%);
+    }
+    .hero-content {
+      position: relative; z-index: 2; text-align: center;
+      color: white; padding: 48px 24px;
+      max-width: 800px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; padding: 7px 18px; border-radius: 30px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      font-weight: 800; line-height: 1.1;
+      margin-bottom: 20px; letter-spacing: -1px;
+    }
+    .hero h1 span { color: #7dd3fc; }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      opacity: 0.88; margin-bottom: 40px; line-height: 1.7;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+    .hero-scroll {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.6); font-size: 0.78rem; text-align: center;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll i { display: block; font-size: 1.3rem; margin-top: 4px; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* Quick Link Cards */
+    .quick-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: -56px; position: relative; z-index: 10;
+    }
+    .quick-card {
+      background: white; border-radius: var(--radius);
+      padding: 32px 28px; text-align: center;
+      box-shadow: var(--shadow-lg); border: 1.5px solid var(--border);
+      transition: all var(--transition); cursor: pointer;
+    }
+    .quick-card:hover { transform: translateY(-6px); border-color: var(--blue); }
+    .quick-card i { font-size: 2rem; color: var(--blue); margin-bottom: 14px; }
+    .quick-card h3 { font-family: var(--font-head); font-size: 1.1rem; margin-bottom: 8px; }
+    .quick-card p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 18px; }
+
+    /* Why Choose Us */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .why-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .why-img img { width: 100%; height: 460px; object-fit: cover; }
+    .why-feature { display: flex; gap: 16px; margin-bottom: 28px; }
+    .why-feature-icon {
+      width: 48px; height: 48px; background: rgba(26,115,232,0.1); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blue); font-size: 1.1rem; flex-shrink: 0; transition: all var(--transition);
+    }
+    .why-feature:hover .why-feature-icon { background: var(--blue); color: white; }
+    .why-feature h4 { font-weight: 600; margin-bottom: 4px; font-size: 0.95rem; }
+    .why-feature p { font-size: 0.875rem; color: var(--text-light); }
+
+    /* Services Preview */
+    .service-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    /* Testimonials */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-card {
+      background: white; border-radius: var(--radius); padding: 28px;
+      border: 1px solid var(--border);
+    }
+    .testimonial-stars { color: #f59e0b; margin-bottom: 14px; font-size: 0.9rem; }
+    .testimonial-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .testimonial-avatar {
+      width: 40px; height: 40px; background: var(--blue); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.9rem;
+    }
+    .testimonial-author strong { display: block; font-size: 0.875rem; }
+    .testimonial-author span { font-size: 0.78rem; color: var(--text-light); }
+
+    @media (max-width: 900px) {
+      .quick-cards { grid-template-columns: 1fr; margin-top: 0; }
+      .why-grid { grid-template-columns: 1fr; }
+      .service-preview-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .service-preview-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><i class="fas fa-tooth"></i></div>
+      <div>
+        DINO DENTAL
+        <span>Kampala</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="videos.html">Videos</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="nav-cta">Book Appointment</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="podcast.html">Podcast</a>
+  <a href="videos.html">Videos</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">📅 Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-img"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content fade-in-up">
+    <div class="hero-badge"><i class="fas fa-star"></i> Award-Winning Dental Care — Kampala</div>
+    <h1>Your Smile,<br><span>Our Priority</span></h1>
+    <p>Dino Dental Kampala — Professional, Friendly, Affordable dental care<br>at the heart of Katwe, Kampala.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-white"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+      <a href="services.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.6);color:white"><i class="fas fa-tooth"></i> Our Services</a>
+      <a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll down <i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- QUICK LINK CARDS -->
+<section class="section" style="padding-top:80px;background:var(--bg-light)">
+  <div class="container">
+    <div class="quick-cards reveal">
+      <a href="contact.html" class="quick-card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Book Appointment</h3>
+        <p>Schedule your visit online. We'll confirm within 2 hours.</p>
+        <span class="btn btn-primary" style="font-size:0.82rem;padding:9px 20px">Book Now →</span>
+      </a>
+      <a href="videos.html" class="quick-card">
+        <i class="fab fa-youtube" style="color:#FF0000"></i>
+        <h3>Watch Videos</h3>
+        <p>Dental tips, procedures, and patient stories on our YouTube channel.</p>
+        <span class="btn btn-outline" style="font-size:0.82rem;padding:9px 20px">Watch Now →</span>
+      </a>
+      <a href="https://m.facebook.com/dentaldino/" target="_blank" class="quick-card">
+        <i class="fab fa-facebook" style="color:#1877F2"></i>
+        <h3>Facebook Offers</h3>
+        <p>Follow us for exclusive discounts and special dental deals!</p>
+        <span class="btn btn-facebook" style="font-size:0.82rem;padding:9px 20px">Follow Us →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-num"><span class="counter" data-target="416" data-suffix="+">0</span></div>
+        <div class="stat-label">YouTube Subscribers</div>
+      </div>
+      <div>
+        <div class="stat-num"><span class="counter" data-target="99" data-suffix="+">0</span></div>
+        <div class="stat-label">Videos Published</div>
+      </div>
+      <div>
+        <div class="stat-num"><span class="counter" data-target="5000" data-suffix="+">0</span></div>
+        <div class="stat-label">Patients Treated</div>
+      </div>
+      <div>
+        <div class="stat-num"><span class="counter" data-target="6">0</span></div>
+        <div class="stat-label">Services Offered</div>
+      </div>
+      <div>
+        <div class="stat-num">⭐ 2024</div>
+        <div class="stat-label">Dental Care Award</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-img reveal">
+        <img src="FB_IMG_17798978575421828.jpg" alt="Dino Dental Clinic team" loading="lazy" />
+      </div>
+      <div class="reveal delay-2">
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title" style="text-align:left;margin-bottom:28px">Caring for Your Smile with Expertise & Warmth</h2>
+        <div class="why-feature">
+          <div class="why-feature-icon"><i class="fas fa-user-md"></i></div>
+          <div>
+            <h4>Experienced Team</h4>
+            <p>Our qualified dental professionals bring years of expertise and genuine care to every patient.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon"><i class="fas fa-home"></i></div>
+          <div>
+            <h4>Home-Like Environment</h4>
+            <p>We've designed our clinic to feel welcoming and relaxed — no cold, clinical spaces here.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon"><i class="fas fa-tag"></i></div>
+          <div>
+            <h4>Affordable Pricing</h4>
+            <p>Quality dental care that won't break the bank. Transparent pricing, no hidden costs.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon"><i class="fas fa-award"></i></div>
+          <div>
+            <h4>Award-Winning Care</h4>
+            <p>Nominated for the 2024 Voice of the Customer Awards — Dental Care Category.</p>
+          </div>
+        </div>
+        <a href="about.html" class="btn btn-primary" style="margin-top:8px"><i class="fas fa-arrow-right"></i> Learn More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Our Dental Services</h2>
+      <p class="section-desc">From routine checkups to advanced treatments — we cover all your dental needs.</p>
+    </div>
+    <div class="service-preview-grid">
+      <div class="service-card reveal delay-1">
+        <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+        <h3>General Checkups</h3>
+        <p>Regular examinations and cleanings to keep your teeth and gums healthy year-round.</p>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon"><i class="fas fa-sparkles"></i></div>
+        <h3>Teeth Whitening</h3>
+        <p>Professional brightening treatments that give you a dazzling, confident smile.</p>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon"><i class="fas fa-tooth"></i></div>
+        <h3>Root Canal Therapy</h3>
+        <p>Pain-free endodontic treatments to save and restore infected or damaged teeth.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="services.html" class="btn btn-primary"><i class="fas fa-list"></i> View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FACEBOOK OFFERS -->
+<section class="section">
+  <div class="container">
+    <div class="fb-banner reveal">
+      <div style="font-size:2.5rem;margin-bottom:12px">🎁</div>
+      <h3>Facebook Exclusive Offers</h3>
+      <p>Follow us on Facebook for special discounts and dental tips! Mention <strong>"Facebook Follower"</strong> when booking for a special discount on your visit.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <a href="https://m.facebook.com/dentaldino/" target="_blank" class="btn btn-white"><i class="fab fa-facebook"></i> Follow Us on Facebook</a>
+        <a href="contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:white"><i class="fas fa-calendar"></i> Book & Save</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Patient Stories</div>
+      <h2 class="section-title">What Our Patients Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Dino Dental gave me back my confidence. The team was incredibly gentle and professional. My teeth have never looked better!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AM</div>
+          <div><strong>Amina M.</strong><span>Kampala</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"I was terrified of dentists but the friendly environment at Dino Dental changed everything. Highly recommend for anyone in Kampala!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JK</div>
+          <div><strong>Joseph K.</strong><span>Katwe</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-3">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Brought my children here for the first time. The doctors were so kind and patient with the kids. Will definitely return!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">GN</div>
+          <div><strong>Grace N.</strong><span>Entebbe Rd</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="section" style="background:linear-gradient(135deg,#0d3d7a,#1a73e8);color:white;text-align:center">
+  <div class="container reveal">
+    <h2 style="font-family:var(--font-head);font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:16px;color:white">Ready for a Healthier Smile?</h2>
+    <p style="opacity:0.88;font-size:1.05rem;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto">Book your appointment today. Our team is ready to welcome you.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-white"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+      <a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:16px">
+          <div class="logo-icon"><i class="fas fa-tooth"></i></div>
+          <div>DINO DENTAL<span>Kampala</span></div>
+        </a>
+        <p>Professional, friendly, and affordable dental care in the heart of Katwe, Kampala. Your smile is our greatest reward.</p>
+        <div class="social-icons">
+          <a href="https://m.facebook.com/dentaldino/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/256701887527" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">General Checkups</a></li>
+          <li><a href="services.html">Teeth Whitening</a></li>
+          <li><a href="services.html">Root Canal</a></li>
+          <li><a href="services.html">Extractions</a></li>
+          <li><a href="services.html">Pediatric Dentistry</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i><span>Delta House, Katwe, opposite Total BMK, Kampala</span></li>
+          <li><i class="fas fa-phone"></i><span>+256 701 887527<br>+256 776 887527</span></li>
+          <li><i class="fas fa-clock"></i><span>Mon–Fri: 8AM–6PM<br>Sat: 9AM–2PM | Sun: Closed</span></li>
+          <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/256701887527" target="_blank">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 Dino Dental Kampala. All rights reserved. | Delta House, Katwe, Kampala</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="main.js"></script>
+</body>
+</html>

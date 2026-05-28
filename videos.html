@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos — Dino Dental Kampala</title>
+  <meta name="description" content="Watch dental tips, procedures, and patient stories from Dino Dental Kampala on YouTube and our video gallery." />
+  <link rel="canonical" href="https://xtremecloud7-prog.github.io/dino-dentist/videos.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .yt-embed-wrap { background:#000;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg); }
+    .yt-embed-wrap iframe { width:100%;height:520px;display:block;border:none; }
+    .video-item { background:white;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:all var(--transition); }
+    .video-item:hover { transform:translateY(-4px);box-shadow:var(--shadow-md); }
+    .video-item video { width:100%;max-height:260px;object-fit:cover;cursor:pointer;background:#000; }
+    .video-item-body { padding:18px 20px; }
+    .video-item-body .tag { font-size:0.72rem;color:var(--blue);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px; }
+    .video-item-body h3 { font-family:var(--font-head);font-size:1rem;margin-bottom:8px;line-height:1.3; }
+    .video-item-body p { font-size:0.845rem;color:var(--text-light);line-height:1.6; }
+    .video-controls { display:flex;align-items:center;justify-content:space-between;margin-top:14px; }
+    .play-toggle { background:var(--blue);color:white;border:none;border-radius:50px;padding:7px 18px;font-size:0.8rem;font-weight:600;cursor:pointer;transition:background var(--transition);display:flex;align-items:center;gap:6px; }
+    .play-toggle:hover { background:var(--blue-dark); }
+    .video-grid-local { display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><i class="fas fa-tooth"></i></div><div>DINO DENTAL<span>Kampala</span></div></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+      <a href="podcast.html">Podcast</a><a href="videos.html" class="active">Videos</a><a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="nav-cta">Book Appointment</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="podcast.html">Podcast</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a>
+  <a href="contact.html">📅 Book Appointment</a>
+</div>
+
+<section class="page-hero">
+  <div class="container fade-in-up">
+    <div class="section-label" style="color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2)">Watch & Learn</div>
+    <h1>Video Gallery</h1>
+    <p>Dental education, tips, procedures, and patient stories — all from Dino Dental Kampala.</p>
+    <div style="margin-top:24px">
+      <a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="btn btn-youtube"><i class="fab fa-youtube"></i> Visit Our YouTube Channel</a>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTUBE PLAYLIST -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">YouTube Channel</div>
+      <h2 class="section-title">Our Full YouTube Playlist</h2>
+      <p class="section-desc">All 99+ videos — automatically updated as we publish new content.</p>
+    </div>
+    <div class="yt-embed-wrap reveal">
+      <iframe
+        src="https://www.youtube.com/embed?listType=playlist&list=UU5WoFza9PufqHYAiJN8PVXg"
+        allowfullscreen
+        title="Dino Dental Kampala YouTube Playlist">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL VIDEO GALLERY -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Featured Videos</div>
+      <h2 class="section-title">Watch Our Latest Videos</h2>
+      <p class="section-desc">Selected videos from our library — play them right here.</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="tips">Dental Tips</button>
+      <button class="filter-btn" data-filter="procedures">Procedures</button>
+      <button class="filter-btn" data-filter="stories">Patient Stories</button>
+    </div>
+
+    <div class="video-grid-local">
+
+      <div class="video-item reveal delay-1" data-category="tips">
+        <video controls preload="metadata" poster="">
+          <source src="Causes_of_teeth_sensitivity_pt1___kironderobert__dinodentalkampala__toothsensitivity_720P_HD_.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-item-body">
+          <div class="tag">Dental Tips</div>
+          <h3>Causes of Tooth Sensitivity — Part 1</h3>
+          <p>Understand why your teeth hurt when eating cold or hot foods, and what you can do about it.</p>
+          <div class="video-controls">
+            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
+            <a href="podcast.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">Podcast →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-item reveal delay-2" data-category="stories">
+        <video controls preload="metadata">
+          <source src="Dentistry_in_home_like_environs_720P_HD_.mp4" type="video/mp4" />
+        </video>
+        <div class="video-item-body">
+          <div class="tag">Patient Stories</div>
+          <h3>Dentistry in a Home-Like Environment</h3>
+          <p>See how we've created a calm, welcoming space for patients who feel anxious about dental visits.</p>
+          <div class="video-controls">
+            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
+            <a href="about.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">About Us →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-item reveal delay-3" data-category="procedures">
+        <video controls preload="metadata">
+          <source src="STOP_TOOTH_EXTRACTON__REMOVING_YOUR_TEETH_IS_BAD__SE_WHAT_HAPPENS___720P_HD_.mp4" type="video/mp4" />
+        </video>
+        <div class="video-item-body">
+          <div class="tag">Procedures</div>
+          <h3>Stop Tooth Extraction — What Really Happens</h3>
+          <p>Why you should think twice before extracting a tooth, and what happens when you do.</p>
+          <div class="video-controls">
+            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
+            <a href="services.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">Our Services →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-item reveal delay-1" data-category="tips">
+        <video controls preload="metadata">
+          <source src="Manya_Obuwuka_Obulwaza_Abaana_Ebinyo_720P_HD_.mp4" type="video/mp4" />
+        </video>
+        <div class="video-item-body">
+          <div class="tag">Dental Tips</div>
+          <h3>Manya Obuwuka — Children's Dental Health</h3>
+          <p>A Luganda-language guide for parents on protecting their children's teeth from common diseases.</p>
+          <div class="video-controls">
+            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
+            <a href="services.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">Pediatric Care →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-item reveal delay-2" data-category="tips">
+        <video controls preload="metadata">
+          <source src="CAUSES_OF_BAD_BREATH_IN_PEOPLE_720P_HD_.mp4" type="video/mp4" />
+        </video>
+        <div class="video-item-body">
+          <div class="tag">Dental Tips</div>
+          <h3>Causes of Bad Breath</h3>
+          <p>Dr. Kiron breaks down the real causes of bad breath (halitosis) and evidence-based ways to treat it.</p>
+          <div class="video-controls">
+            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
+            <a href="contact.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">Book Visit →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subscribe CTA -->
+      <div class="reveal delay-3" style="background:linear-gradient(135deg,#FF0000,#cc0000);border-radius:var(--radius);padding:40px;color:white;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center">
+        <i class="fab fa-youtube" style="font-size:3rem;margin-bottom:16px"></i>
+        <h3 style="font-family:var(--font-head);font-size:1.4rem;margin-bottom:10px">More on YouTube</h3>
+        <p style="opacity:0.9;margin-bottom:20px;font-size:0.9rem">We have 99+ videos on dental health. Subscribe so you don't miss our newest content.</p>
+        <a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="btn btn-white" style="font-size:0.85rem"><i class="fab fa-youtube" style="color:#FF0000"></i> Subscribe Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BONUS: MOV files -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Behind the Scenes</div>
+      <h2 class="section-title">Clinic Moments</h2>
+      <p class="section-desc">A peek behind the scenes at Dino Dental Kampala.</p>
+    </div>
+    <div class="video-grid-local">
+      <div class="video-item reveal delay-1" data-category="stories">
+        <video controls preload="metadata" style="max-height:260px">
+          <source src="IMG_3564.MOV" type="video/mp4" />
+          <source src="IMG_3564.MOV" type="video/quicktime" />
+        </video>
+        <div class="video-item-body">
+          <div class="tag">Clinic Life</div>
+          <h3>Clinic Moment #1</h3>
+          <p>A candid moment from our team at Dino Dental Kampala.</p>
+        </div>
+      </div>
+      <div class="video-item reveal delay-2" data-category="stories">
+        <video controls preload="metadata" style="max-height:260px">
+          <source src="IMG_3565.MOV" type="video/mp4" />
+          <source src="IMG_3565.MOV" type="video/quicktime" />
+        </video>
+        <div class="video-item-body">
+          <div class="tag">Clinic Life</div>
+          <h3>Clinic Moment #2</h3>
+          <p>More from the Dino Dental team — caring for patients every day.</p>
+        </div>
+      </div>
+      <div class="video-item reveal delay-3" data-category="stories">
+        <video controls preload="metadata" style="max-height:260px">
+          <source src="IMG_3559.MOV" type="video/mp4" />
+          <source src="IMG_3559.MOV" type="video/quicktime" />
+        </video>
+        <div class="video-item-body">
+          <div class="tag">Clinic Life</div>
+          <h3>Clinic Moment #3</h3>
+          <p>Inside the welcoming world of Dino Dental Kampala.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:16px"><div class="logo-icon"><i class="fas fa-tooth"></i></div><div>DINO DENTAL<span>Kampala</span></div></a><p>Professional dental care at Delta House, Katwe, Kampala.</p><div class="social-icons"><a href="https://m.facebook.com/dentaldino/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a><a href="https://wa.me/256701887527" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Videos</h4><ul><li><a href="podcast.html">Live Podcast</a></li><li><a href="videos.html">Video Gallery</a></li><li><a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank">YouTube Channel</a></li></ul></div>
+      <div><h4>Contact Us</h4><ul class="footer-contact"><li><i class="fas fa-map-marker-alt"></i><span>Delta House, Katwe, Kampala</span></li><li><i class="fas fa-phone"></i><span>+256 701 887527</span></li><li><i class="fas fa-clock"></i><span>Mon–Fri: 8AM–6PM | Sat: 9AM–2PM</span></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p>&copy; 2025 Dino Dental Kampala. All rights reserved.</p></div></div>
+</footer>
+
+<a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
+<script src="main.js"></script>
+</body>
+</html>
