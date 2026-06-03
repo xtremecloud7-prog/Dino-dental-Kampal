@@ -1,246 +1,453 @@
 <!DOCTYPE html>
+<!-- videos.html — DINO DENTAL KAMPALA | Videos embedded directly on page — no clicking needed -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Videos — Dino Dental Kampala</title>
-  <meta name="description" content="Watch dental tips, procedures, and patient stories from Dino Dental Kampala on YouTube and our video gallery." />
-  <link rel="canonical" href="https://xtremecloud7-prog.github.io/dino-dentist/videos.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watch & Learn | Dino Dental Kampala</title>
+  <meta name="description" content="Watch dental tips and oral health videos from Dr. Kironde Robert at Dino Dental Kampala, Uganda."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    .yt-embed-wrap { background:#000;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg); }
-    .yt-embed-wrap iframe { width:100%;height:520px;display:block;border:none; }
-    .video-item { background:white;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:all var(--transition); }
-    .video-item:hover { transform:translateY(-4px);box-shadow:var(--shadow-md); }
-    .video-item video { width:100%;max-height:260px;object-fit:cover;cursor:pointer;background:#000; }
-    .video-item-body { padding:18px 20px; }
-    .video-item-body .tag { font-size:0.72rem;color:var(--blue);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px; }
-    .video-item-body h3 { font-family:var(--font-head);font-size:1rem;margin-bottom:8px;line-height:1.3; }
-    .video-item-body p { font-size:0.845rem;color:var(--text-light);line-height:1.6; }
-    .video-controls { display:flex;align-items:center;justify-content:space-between;margin-top:14px; }
-    .play-toggle { background:var(--blue);color:white;border:none;border-radius:50px;padding:7px 18px;font-size:0.8rem;font-weight:600;cursor:pointer;transition:background var(--transition);display:flex;align-items:center;gap:6px; }
-    .play-toggle:hover { background:var(--blue-dark); }
-    .video-grid-local { display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px; }
+    /* ─── RESET & VARIABLES ─────────────────────────────── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --blue:   #1a73e8;
+      --blue-d: #1557b0;
+      --dark:   #1a1a1a;
+      --grey:   #f0f4f8;
+      --white:  #ffffff;
+      --nav-h:  68px;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--grey); color:var(--dark); }
+    h1,h2,h3 { font-family:'Playfair Display',serif; }
+    a { text-decoration:none; color:inherit; }
+
+    /* ─── NAV ────────────────────────────────────────────── */
+    .nav {
+      position:fixed; top:0; left:0; right:0; z-index:999;
+      height:var(--nav-h);
+      background:rgba(255,255,255,0.97);
+      backdrop-filter:blur(12px);
+      box-shadow:0 2px 12px rgba(26,115,232,0.09);
+      display:flex; align-items:center;
+      justify-content:space-between;
+      padding:0 clamp(1rem,4vw,3.5rem);
+    }
+    .logo { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700; color:var(--blue); letter-spacing:.08em; }
+    .logo span { color:var(--dark); }
+    .nav-links { display:flex; gap:1.8rem; list-style:none; }
+    .nav-links a { font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(26,26,26,.6); font-weight:500; transition:color .3s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--blue); }
+    .nav-cta { background:var(--blue); color:#fff; padding:.5rem 1.2rem; border-radius:2px; font-size:.78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; transition:background .3s; }
+    .nav-cta:hover { background:var(--blue-d); }
+    .burger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+    .burger span { display:block; width:23px; height:2px; background:var(--dark); transition:all .3s; }
+    .burger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2){ opacity:0; }
+    .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+    .mob-nav { display:none; position:fixed; top:var(--nav-h); left:0; right:0; background:#fff; padding:1.5rem; flex-direction:column; gap:1.2rem; z-index:998; border-top:1px solid rgba(26,115,232,.1); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+    .mob-nav.open { display:flex; }
+    .mob-nav a { font-size:1rem; color:rgba(26,26,26,.75); padding-bottom:.75rem; border-bottom:1px solid rgba(26,26,26,.07); }
+    .mob-nav a:hover { color:var(--blue); }
+    .mob-nav .mob-cta { background:var(--blue); color:#fff; padding:.8rem; text-align:center; font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.82rem; border-radius:2px; border-bottom:none; margin-top:.5rem; }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      padding:calc(var(--nav-h) + 3.5rem) clamp(1rem,5vw,4rem) 3rem;
+      background:linear-gradient(135deg,#e8f0fe,#f0f4f8);
+    }
+    .label { font-size:.7rem; letter-spacing:.35em; text-transform:uppercase; color:var(--blue); margin-bottom:.6rem; }
+    .hero h1 { font-size:clamp(2rem,6vw,4rem); color:var(--dark); line-height:1.1; }
+    .hero h1 em { color:var(--blue); font-style:italic; }
+    .hero p { font-size:.95rem; color:rgba(26,26,26,.55); margin-top:.6rem; max-width:480px; line-height:1.7; }
+
+    /* ─── FILTER ─────────────────────────────────────────── */
+    .filters {
+      display:flex; gap:.6rem; flex-wrap:wrap;
+      padding:1.5rem clamp(1rem,5vw,4rem);
+      background:#fff; border-bottom:1px solid rgba(26,26,26,.07);
+    }
+    .fbtn {
+      padding:.45rem 1.1rem; border-radius:20px; font-size:.78rem;
+      text-transform:uppercase; letter-spacing:.08em; font-weight:500;
+      border:1px solid rgba(26,26,26,.18); color:rgba(26,26,26,.6);
+      background:none; cursor:pointer; transition:all .25s;
+    }
+    .fbtn.on, .fbtn:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
+
+    /* ─── VIDEO GRID ─────────────────────────────────────── */
+    .grid-wrap { padding:2.5rem clamp(1rem,5vw,4rem) 5rem; }
+    .vgrid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
+    }
+
+    /* ─── VIDEO CARD ─────────────────────────────────────── */
+    .vcard {
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      border:1px solid rgba(26,115,232,.1);
+      box-shadow:0 2px 12px rgba(26,115,232,.06);
+      transition:transform .3s, box-shadow .3s;
+    }
+    .vcard:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(26,115,232,.13); }
+
+    /* ── THE IFRAME WRAPPER ─── */
+    .vid-wrap {
+      position:relative;
+      width:100%;
+      /* Portrait 9:16 for Shorts */
+      padding-bottom:177.78%;
+      background:#000;
+      overflow:hidden;
+    }
+    .vid-wrap iframe {
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      border:0;
+    }
+
+    /* card info below the video */
+    .vinfo { padding:1rem 1.1rem 1.3rem; }
+    .vtag { display:inline-block; font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; color:var(--blue); background:rgba(26,115,232,.08); padding:.18rem .55rem; border-radius:3px; margin-bottom:.5rem; }
+    .vtitle { font-size:.92rem; font-weight:600; color:var(--dark); line-height:1.4; margin-bottom:.35rem; }
+    .vdesc { font-size:.78rem; color:rgba(26,26,26,.5); line-height:1.6; }
+    .vlink {
+      display:inline-flex; align-items:center; gap:.4rem;
+      margin-top:.8rem; font-size:.73rem; letter-spacing:.1em;
+      text-transform:uppercase; color:var(--blue); font-weight:600;
+    }
+    .vlink:hover { color:var(--blue-d); }
+
+    /* ─── BOTTOM CTA STRIP ───────────────────────────────── */
+    .cta-strip {
+      background:linear-gradient(135deg,var(--blue),var(--blue-d));
+      padding:3.5rem clamp(1rem,5vw,4rem);
+      display:flex; align-items:center; justify-content:space-between;
+      flex-wrap:wrap; gap:1.5rem;
+    }
+    .cta-strip h2 { font-size:clamp(1.4rem,3vw,2rem); color:#fff; }
+    .cta-strip p { font-size:.88rem; color:rgba(255,255,255,.7); margin-top:.3rem; }
+    .cta-btns { display:flex; gap:.75rem; flex-wrap:wrap; }
+    .cbtn {
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.8rem 1.8rem; border-radius:3px; font-size:.82rem;
+      letter-spacing:.1em; text-transform:uppercase; font-weight:700;
+      transition:all .3s; cursor:pointer; border:none; font-family:'Inter',sans-serif;
+    }
+    .cbtn-white { background:#fff; color:var(--blue); }
+    .cbtn-white:hover { background:#f0f4f8; }
+    .cbtn-wa { background:#25D366; color:#fff; }
+    .cbtn-wa:hover { background:#1ab553; }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    .footer { background:#0f1e36; padding:4.5rem clamp(1rem,5vw,4rem) 2rem; color:rgba(255,255,255,.55); }
+    .ft { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; margin-bottom:2.5rem; }
+    .flogo { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--blue); letter-spacing:.1em; margin-bottom:.6rem; }
+    .footer-brand p { font-size:.84rem; line-height:1.7; max-width:260px; }
+    .ftagline { font-style:italic; color:rgba(255,255,255,.3); margin-top:.4rem; font-size:.8rem; }
+    .fc h4 { font-size:.7rem; letter-spacing:.25em; text-transform:uppercase; color:var(--blue); margin-bottom:1rem; }
+    .fc ul { list-style:none; display:flex; flex-direction:column; gap:.55rem; }
+    .fc ul a { font-size:.83rem; color:rgba(255,255,255,.5); transition:color .3s; }
+    .fc ul a:hover { color:var(--blue); }
+    .fsoc { display:flex; gap:.9rem; margin-top:1.3rem; }
+    .fsoc a { width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.5); font-size:.82rem; transition:all .3s; }
+    .fsoc a:hover { border-color:var(--blue); color:var(--blue); }
+    .fbot { padding-top:1.8rem; border-top:1px solid rgba(255,255,255,.08); display:flex; justify-content:space-between; flex-wrap:wrap; gap:.75rem; }
+    .fbot p { font-size:.76rem; }
+
+    /* ─── WHATSAPP FLOAT ─────────────────────────────────── */
+    .wa { position:fixed; bottom:2rem; right:2rem; z-index:900; width:54px; height:54px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.45rem; box-shadow:0 4px 18px rgba(37,211,102,.4); animation:wap 2.5s ease-in-out infinite; transition:transform .3s; }
+    .wa:hover { transform:scale(1.1); animation:none; }
+    @keyframes wap { 0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.4)} 50%{box-shadow:0 4px 36px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.1)} }
+    .stb { position:fixed; bottom:6.2rem; right:2rem; z-index:900; width:42px; height:42px; border-radius:50%; background:rgba(26,115,232,.08); border:1px solid var(--blue); display:flex; align-items:center; justify-content:center; color:var(--blue); cursor:pointer; opacity:0; transform:translateY(8px); pointer-events:none; transition:all .3s; }
+    .stb.show { opacity:1; transform:none; pointer-events:all; }
+    .stb:hover { background:var(--blue); color:#fff; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────── */
+    @media(max-width:1000px){ .vgrid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:900px){
+      .nav-links,.nav-cta{ display:none; }
+      .burger{ display:flex; }
+      .ft{ grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:580px){
+      .vgrid{ grid-template-columns:1fr; }
+      .ft{ grid-template-columns:1fr; }
+      .cta-strip{ flex-direction:column; }
+    }
   </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo"><div class="logo-icon"><i class="fas fa-tooth"></i></div><div>DINO DENTAL<span>Kampala</span></div></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
-      <a href="podcast.html">Podcast</a><a href="videos.html" class="active">Videos</a><a href="gallery.html">Gallery</a>
-      <a href="contact.html" class="nav-cta">Book Appointment</a>
-    </div>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  <!-- ══════════ NAV ══════════ -->
+  <nav class="nav">
+    <a href="index.html" class="logo">DINO DENTAL <span>KAMPALA</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="podcast.html">Podcast</a></li>
+      <li><a href="videos.html" class="active">Videos</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Book Now</a>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mob-nav" id="mobNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="podcast.html">Podcast</a>
+    <a href="videos.html">Videos</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="mob-cta">Book Consultation</a>
   </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
-  <a href="podcast.html">Podcast</a><a href="videos.html">Videos</a><a href="gallery.html">Gallery</a>
-  <a href="contact.html">📅 Book Appointment</a>
-</div>
 
-<section class="page-hero">
-  <div class="container fade-in-up">
-    <div class="section-label" style="color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.2)">Watch & Learn</div>
-    <h1>Video Gallery</h1>
-    <p>Dental education, tips, procedures, and patient stories — all from Dino Dental Kampala.</p>
-    <div style="margin-top:24px">
-      <a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="btn btn-youtube"><i class="fab fa-youtube"></i> Visit Our YouTube Channel</a>
-    </div>
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero">
+    <p class="label">Dr. Kironde Robert · Dino Dental Kampala</p>
+    <h1>Watch <em>&amp; Learn</em></h1>
+    <p>Dental tips, procedures and oral health education — straight from our clinic in Kampala, Uganda.</p>
+  </section>
+
+  <!-- ══════════ FILTER ══════════ -->
+  <div class="filters">
+    <button class="fbtn on"  data-f="all">All Videos</button>
+    <button class="fbtn"     data-f="tips">Dental Tips</button>
+    <button class="fbtn"     data-f="procedure">Procedures</button>
+    <button class="fbtn"     data-f="health">Oral Health</button>
   </div>
-</section>
 
-<!-- YOUTUBE PLAYLIST -->
-<section class="section">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">YouTube Channel</div>
-      <h2 class="section-title">Our Full YouTube Playlist</h2>
-      <p class="section-desc">All 99+ videos — automatically updated as we publish new content.</p>
-    </div>
-    <div class="yt-embed-wrap reveal">
-      <iframe
-        src="https://www.youtube.com/embed?listType=playlist&list=UU5WoFza9PufqHYAiJN8PVXg"
-        allowfullscreen
-        title="Dino Dental Kampala YouTube Playlist">
-      </iframe>
-    </div>
+  <!-- ══════════ VIDEO GRID ══════════ -->
+  <div class="grid-wrap">
+    <div class="vgrid" id="vgrid">
+
+      <!-- VIDEO 1 — Dental Tips -->
+      <div class="vcard" data-f="tips">
+        <div class="vid-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/3fUttJQy1k4?rel=0&playsinline=1"
+            title="Dental Tips — Dino Dental Kampala"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="vinfo">
+          <span class="vtag">Dental Tips</span>
+          <h3 class="vtitle">Dental Tips — Dino Dental Kampala</h3>
+          <p class="vdesc">Fun and informative dental tips from Dr. Kironde Robert. #dinodentalkampala</p>
+          <a href="https://youtube.com/shorts/3fUttJQy1k4" target="_blank" class="vlink">
+            Open on YouTube <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- VIDEO 2 — Dental Tips Pt 2 -->
+      <div class="vcard" data-f="tips">
+        <div class="vid-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/aKdAVOBdCbM?rel=0&playsinline=1"
+            title="Dental Tips Part 2 — Dino Dental Kampala"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="vinfo">
+          <span class="vtag">Dental Tips</span>
+          <h3 class="vtitle">Dental Tips Part 2 — Dino Dental Kampala</h3>
+          <p class="vdesc">More practical dental education from the team at Dino Dental Kampala.</p>
+          <a href="https://youtube.com/shorts/aKdAVOBdCbM" target="_blank" class="vlink">
+            Open on YouTube <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- VIDEO 3 — Dental Tips Pt 3 -->
+      <div class="vcard" data-f="tips">
+        <div class="vid-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/41-hKbvwvZ8?rel=0&playsinline=1"
+            title="Dental Tips Part 3 — Dino Dental Kampala"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="vinfo">
+          <span class="vtag">Dental Tips</span>
+          <h3 class="vtitle">Dental Tips Part 3 — Dino Dental Kampala</h3>
+          <p class="vdesc">Dr. Kironde Robert — practical dental tips you can use every day.</p>
+          <a href="https://youtube.com/shorts/41-hKbvwvZ8" target="_blank" class="vlink">
+            Open on YouTube <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- VIDEO 4 — Autism & Dental Filling -->
+      <div class="vcard" data-f="procedure">
+        <div class="vid-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/iMPo5KKIIEs?rel=0&playsinline=1"
+            title="Autism and Dental Filling — Dr. Kironde Robert"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="vinfo">
+          <span class="vtag">Procedure</span>
+          <h3 class="vtitle">Autism &amp; Dental Filling</h3>
+          <p class="vdesc">How Dino Dental Kampala handles dental fillings for patients with autism — with care and expertise.</p>
+          <a href="https://youtube.com/shorts/iMPo5KKIIEs" target="_blank" class="vlink">
+            Open on YouTube <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- VIDEO 5 — Teeth Sensitivity -->
+      <div class="vcard" data-f="health">
+        <div class="vid-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/sZ6JthtVoCI?rel=0&playsinline=1"
+            title="Causes of Teeth Sensitivity Part 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="vinfo">
+          <span class="vtag">Oral Health</span>
+          <h3 class="vtitle">Causes of Teeth Sensitivity — Part 1</h3>
+          <p class="vdesc">Why do your teeth hurt? Dr. Kironde Robert explains the real causes of tooth sensitivity.</p>
+          <a href="https://youtube.com/shorts/sZ6JthtVoCI" target="_blank" class="vlink">
+            Open on YouTube <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- VIDEO 6 — Teeth Stains -->
+      <div class="vcard" data-f="health">
+        <div class="vid-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/tAh69VEMTKc?rel=0&playsinline=1"
+            title="Teeth Stains — Causes and Solutions"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+        <div class="vinfo">
+          <span class="vtag">Oral Health</span>
+          <h3 class="vtitle">Teeth Stains — Causes &amp; Solutions</h3>
+          <p class="vdesc">What causes teeth stains and how to remove them — Dr. Kironde Robert explains everything.</p>
+          <a href="https://youtube.com/shorts/tAh69VEMTKc" target="_blank" class="vlink">
+            Open on YouTube <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /vgrid -->
   </div>
-</section>
 
-<!-- LOCAL VIDEO GALLERY -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">Featured Videos</div>
-      <h2 class="section-title">Watch Our Latest Videos</h2>
-      <p class="section-desc">Selected videos from our library — play them right here.</p>
+  <!-- ══════════ CTA STRIP ══════════ -->
+  <div class="cta-strip">
+    <div>
+      <h2>Ready for Your Consultation?</h2>
+      <p>Visit us at Delta House, Katwe, Kampala — or book via WhatsApp.</p>
     </div>
-
-    <!-- Filter Bar -->
-    <div class="filter-bar reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="tips">Dental Tips</button>
-      <button class="filter-btn" data-filter="procedures">Procedures</button>
-      <button class="filter-btn" data-filter="stories">Patient Stories</button>
-    </div>
-
-    <div class="video-grid-local">
-
-      <div class="video-item reveal delay-1" data-category="tips">
-        <video controls preload="metadata" poster="">
-          <source src="Causes_of_teeth_sensitivity_pt1___kironderobert__dinodentalkampala__toothsensitivity_720P_HD_.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div class="video-item-body">
-          <div class="tag">Dental Tips</div>
-          <h3>Causes of Tooth Sensitivity — Part 1</h3>
-          <p>Understand why your teeth hurt when eating cold or hot foods, and what you can do about it.</p>
-          <div class="video-controls">
-            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
-            <a href="podcast.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">Podcast →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-item reveal delay-2" data-category="stories">
-        <video controls preload="metadata">
-          <source src="Dentistry_in_home_like_environs_720P_HD_.mp4" type="video/mp4" />
-        </video>
-        <div class="video-item-body">
-          <div class="tag">Patient Stories</div>
-          <h3>Dentistry in a Home-Like Environment</h3>
-          <p>See how we've created a calm, welcoming space for patients who feel anxious about dental visits.</p>
-          <div class="video-controls">
-            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
-            <a href="about.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">About Us →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-item reveal delay-3" data-category="procedures">
-        <video controls preload="metadata">
-          <source src="STOP_TOOTH_EXTRACTON__REMOVING_YOUR_TEETH_IS_BAD__SE_WHAT_HAPPENS___720P_HD_.mp4" type="video/mp4" />
-        </video>
-        <div class="video-item-body">
-          <div class="tag">Procedures</div>
-          <h3>Stop Tooth Extraction — What Really Happens</h3>
-          <p>Why you should think twice before extracting a tooth, and what happens when you do.</p>
-          <div class="video-controls">
-            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
-            <a href="services.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">Our Services →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-item reveal delay-1" data-category="tips">
-        <video controls preload="metadata">
-          <source src="Manya_Obuwuka_Obulwaza_Abaana_Ebinyo_720P_HD_.mp4" type="video/mp4" />
-        </video>
-        <div class="video-item-body">
-          <div class="tag">Dental Tips</div>
-          <h3>Manya Obuwuka — Children's Dental Health</h3>
-          <p>A Luganda-language guide for parents on protecting their children's teeth from common diseases.</p>
-          <div class="video-controls">
-            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
-            <a href="services.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">Pediatric Care →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="video-item reveal delay-2" data-category="tips">
-        <video controls preload="metadata">
-          <source src="CAUSES_OF_BAD_BREATH_IN_PEOPLE_720P_HD_.mp4" type="video/mp4" />
-        </video>
-        <div class="video-item-body">
-          <div class="tag">Dental Tips</div>
-          <h3>Causes of Bad Breath</h3>
-          <p>Dr. Kiron breaks down the real causes of bad breath (halitosis) and evidence-based ways to treat it.</p>
-          <div class="video-controls">
-            <span style="font-size:0.78rem;color:var(--text-light)"><i class="fas fa-play-circle" style="color:var(--blue)"></i> Play above</span>
-            <a href="contact.html" style="font-size:0.8rem;color:var(--blue);font-weight:600">Book Visit →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Subscribe CTA -->
-      <div class="reveal delay-3" style="background:linear-gradient(135deg,#FF0000,#cc0000);border-radius:var(--radius);padding:40px;color:white;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center">
-        <i class="fab fa-youtube" style="font-size:3rem;margin-bottom:16px"></i>
-        <h3 style="font-family:var(--font-head);font-size:1.4rem;margin-bottom:10px">More on YouTube</h3>
-        <p style="opacity:0.9;margin-bottom:20px;font-size:0.9rem">We have 99+ videos on dental health. Subscribe so you don't miss our newest content.</p>
-        <a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="btn btn-white" style="font-size:0.85rem"><i class="fab fa-youtube" style="color:#FF0000"></i> Subscribe Now</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- BONUS: MOV files -->
-<section class="section">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">Behind the Scenes</div>
-      <h2 class="section-title">Clinic Moments</h2>
-      <p class="section-desc">A peek behind the scenes at Dino Dental Kampala.</p>
-    </div>
-    <div class="video-grid-local">
-      <div class="video-item reveal delay-1" data-category="stories">
-        <video controls preload="metadata" style="max-height:260px">
-          <source src="IMG_3564.MOV" type="video/mp4" />
-          <source src="IMG_3564.MOV" type="video/quicktime" />
-        </video>
-        <div class="video-item-body">
-          <div class="tag">Clinic Life</div>
-          <h3>Clinic Moment #1</h3>
-          <p>A candid moment from our team at Dino Dental Kampala.</p>
-        </div>
-      </div>
-      <div class="video-item reveal delay-2" data-category="stories">
-        <video controls preload="metadata" style="max-height:260px">
-          <source src="IMG_3565.MOV" type="video/mp4" />
-          <source src="IMG_3565.MOV" type="video/quicktime" />
-        </video>
-        <div class="video-item-body">
-          <div class="tag">Clinic Life</div>
-          <h3>Clinic Moment #2</h3>
-          <p>More from the Dino Dental team — caring for patients every day.</p>
-        </div>
-      </div>
-      <div class="video-item reveal delay-3" data-category="stories">
-        <video controls preload="metadata" style="max-height:260px">
-          <source src="IMG_3559.MOV" type="video/mp4" />
-          <source src="IMG_3559.MOV" type="video/quicktime" />
-        </video>
-        <div class="video-item-body">
-          <div class="tag">Clinic Life</div>
-          <h3>Clinic Moment #3</h3>
-          <p>Inside the welcoming world of Dino Dental Kampala.</p>
-        </div>
-      </div>
+    <div class="cta-btns">
+      <a href="contact.html" class="cbtn cbtn-white">
+        <i class="fa-solid fa-calendar-check"></i> Book Now
+      </a>
+      <a href="https://wa.me/256776887527?text=Hi%20Dino%20Dental%20Kampala%2C%20I%20watched%20your%20videos%20and%20I'd%20like%20to%20book%20a%20consultation."
+         target="_blank" class="cbtn cbtn-wa">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
     </div>
   </div>
-</section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand"><a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:16px"><div class="logo-icon"><i class="fas fa-tooth"></i></div><div>DINO DENTAL<span>Kampala</span></div></a><p>Professional dental care at Delta House, Katwe, Kampala.</p><div class="social-icons"><a href="https://m.facebook.com/dentaldino/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a><a href="https://wa.me/256701887527" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a></div></div>
-      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Videos</h4><ul><li><a href="podcast.html">Live Podcast</a></li><li><a href="videos.html">Video Gallery</a></li><li><a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank">YouTube Channel</a></li></ul></div>
-      <div><h4>Contact Us</h4><ul class="footer-contact"><li><i class="fas fa-map-marker-alt"></i><span>Delta House, Katwe, Kampala</span></li><li><i class="fas fa-phone"></i><span>+256 701 887527</span></li><li><i class="fas fa-clock"></i><span>Mon–Fri: 8AM–6PM | Sat: 9AM–2PM</span></li></ul></div>
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="ft">
+      <div class="footer-brand">
+        <div class="flogo">DINO DENTAL KAMPALA</div>
+        <p>Kampala's premier dental studio — where science meets artistry.</p>
+        <p class="ftagline">"Crafting Smiles. Restoring Confidence."</p>
+        <div class="fsoc">
+          <a href="https://m.facebook.com/dentaldino/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@dinodentalkampala4613" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="fc"><h4>Pages</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="podcast.html">Podcast</a></li>
+      </ul></div>
+      <div class="fc"><h4>Media</h4><ul>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="podcast.html">Episodes</a></li>
+        <li><a href="contact.html">Book Now</a></li>
+      </ul></div>
+      <div class="fc"><h4>Contact</h4><ul>
+        <li><a href="tel:+256776887527">+256 776 887527</a></li>
+        <li><a href="tel:+256701887527">+256 701 887527</a></li>
+        <li><a href="mailto:info@dinodental.co.ug">info@dinodental.co.ug</a></li>
+        <li><a href="contact.html">Katwe, Kampala</a></li>
+      </ul></div>
     </div>
-  </div>
-  <div class="footer-bottom"><div class="container"><p>&copy; 2025 Dino Dental Kampala. All rights reserved.</p></div></div>
-</footer>
+    <div class="fbot">
+      <p>© 2025 Dino Dental Kampala. All rights reserved.</p>
+      <p>For informational purposes only — not medical advice.</p>
+    </div>
+  </footer>
 
-<a href="https://wa.me/256701887527?text=Hi%20Dino%20Dental!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-<button class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></button>
-<script src="main.js"></script>
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/256776887527?text=Hi%20Dino%20Dental%20Kampala%2C%20I'd%20like%20to%20book%20a%20consultation."
+     class="wa" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <button class="stb" id="stb"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    /* NAV burger */
+    const burger = document.getElementById('burger');
+    const mobNav = document.getElementById('mobNav');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      mobNav.classList.toggle('open');
+    });
+    mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobNav.classList.remove('open');
+    }));
+
+    /* Scroll-to-top */
+    const stb = document.getElementById('stb');
+    window.addEventListener('scroll', () => stb.classList.toggle('show', scrollY > 300));
+    stb.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+    /* Filter */
+    document.querySelectorAll('.fbtn').forEach(btn => {
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
+        this.classList.add('on');
+        const f = this.dataset.f;
+        document.querySelectorAll('.vcard').forEach(c => {
+          c.style.display = (f==='all' || c.dataset.f===f) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
